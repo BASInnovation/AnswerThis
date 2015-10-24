@@ -21,6 +21,17 @@ exports.insertRequest = function insertRequest(calcrequest,result,callback) {
 
 }
 
+exports.getRequests = function getRequests(callback) {
+
+    db.collection('request').find().toArray(function(err, result) {
+        if (err) throw err;
+        console.log(result);
+        callback("",result);
+    });
+
+
+}
+
 
 
 
