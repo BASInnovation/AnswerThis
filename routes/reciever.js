@@ -63,3 +63,61 @@ exports.TextRecieved = function(req, res){
 
 
 }
+
+
+exports.TextRecievedTest = function(req, res){
+
+    // http://hmlbip.northeurope.cloudapp.azure.com/gettext?id=AB_123&to=12345&from=441234567890&keyword=hello&content=Hello%20world
+    // http://www.example.com/receive-sms?to=84433&from=441234567890&content=Hello+World&keyword=hello&msg_id=AB_12345
+    // work out text message
+    // get varibles out of message
+
+    var fromNumber =  req.query.from;
+    var txtMessage = req.query.content;
+    var msg_id = req.query.msg_id;
+    var keyword = req.query.hello;
+
+
+    console.log("fromNumber" + fromNumber);
+    console.log("txtMessage" + txtMessage);
+
+
+
+    worker.Calculate(txtMessage,function(err,result){
+
+
+        // save to db
+        dbcalcs.insertRequest(txtMessage,result,function(err,dbresult){
+
+
+            res.send(result);
+
+
+        })
+
+    });
+
+
+
+
+
+
+
+
+    //send the answer back.
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+

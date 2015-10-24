@@ -11,8 +11,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(express.static(__dirname + '/public'));
+//app.use(express.bodyParser());
 
-app.get('/gottext', SMSreciever.TextRecieved);
+
+app.get('/gettext', SMSreciever.TextRecieved);
+app.get('/gettexttest', SMSreciever.TextRecievedTest);
+
+
 
 app.get('/stats', HTTPreciever.HTTPRecieved);
 
