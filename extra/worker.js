@@ -1,4 +1,4 @@
-//var convert = require('convert-units');
+var convert = require('convert-units');
 
 
 exports.Calculate = function Calculate(message,callback)
@@ -505,15 +505,29 @@ function CheckForType(message)
         var indexOfKG =  message.indexOf('KG');
         var indexOfLb =  message.indexOf('LB');
 
-        if (indexOfKG > indexOfLb)
+        var arrayMessage = message.split('to');
+        var part1 = arrayMessage[0].trim();
+        var numberPattern = /\d+/g;
+        var resultNumber = part1.match( numberPattern );
+
+        console.log("our number to convert" + resultNumber);
+
+
+
+       // var part2 = arrayMessage[1].trim();
+
+        if (indexOfKG < indexOfLb)
         {
+
+            result = convert(resultNumber).from('kg').to('lb');
 
         }else {
 
+            result = convert(resultNumber).from('lb').to('kg');
 
         }
 
-        Convert(message,1);
+          return {'actualResult': result, 'message':''};
 
 
 
@@ -553,7 +567,7 @@ function Convert(message,type)
 
     if (type == 1) {
 
-        result = convert(1).from('kg').to('lb');
+
         console.log(result);
     }
 
