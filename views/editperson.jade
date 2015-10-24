@@ -1,0 +1,46 @@
+extends layout
+
+block headcontent
+  script(src="/javascripts/checkuser.js")
+  script(src="/javascripts/editperson.js")
+
+  script(type="text/javascript")
+    | var Role = "#{user.userRole}"
+
+block content
+    div.row
+        div.col-md-2
+        div.col-md-8
+            h2 EDIT PERSON
+            div
+                form.form-width(id='productForm', action='/people/updateperson/' + id, method='post', enctype='multipart/form-data')
+                    div.form-group
+                        input.form-control#personId(type='text', name='personId', placeholder='Person ID',required, autofocus, style='display:none;' value=id)
+                    div.form-group
+                        input.form-control#forename(type='text', name='forename', placeholder='Forename',required, autofocus)
+                    div.form-group
+                        input.form-control#surname(type='text', name='surname', placeholder='Surname', required)
+                    div.form-group
+                        input.form-control#personDescription(type='text', name='personDescription', placeholder='Person Description', required)
+                    div.form-group
+                        select.form-control#department(type='text', name='department', placeholder='Department')
+                    div.form-group
+                        input.form-control#lineManager(type='text', name='lineManager', placeholder='Line Manager')
+                    div.form-group
+                        input.form-control#manager(type='text', name='manager', placeholder='Manager')
+                    div.form-group
+                        input.form-control#role(type='text', name='role', placeholder='Role')
+                    div.form-group
+                        input.form-control#skills(type='text', name='skills', placeholder='Skills')
+                    div.form-group
+                        input.form-control#imageurl(type='text', name='imageurl', placeholder='Image URL', style='display:none')
+                    div.form-group
+                        img#userThumbnail(src="")
+                    div.form-group
+                        label Replace Person Image
+                        input.form-control#displayImage(type="file", name='displayImage', multiple)
+                    button.btn(type='submit') &nbsp;Update Person
+                    span.clearfix
+                #message
+                if message
+                    h2.errorMessage #{message}

@@ -1,0 +1,26 @@
+extends layout
+
+block headcontent
+	script(src="/javascripts/checkuser.js")
+	script(src="/javascripts/manageusers.js")
+
+	script(type="text/javascript")
+		| var Role = "#{user.userRole}"
+
+block content
+	div.row
+		div.col-md-2
+		div.col-md-8
+			h2 User Details
+			table.table.table-striped#userList
+				thead
+					tr
+						th Username
+						th First Name
+						th Last Name
+						th E-mail
+						th Role
+						th
+				tbody
+			button.btn(type='button' onclick='window.location.href="signup";') Add Account
+		div-col-md-2

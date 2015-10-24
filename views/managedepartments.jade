@@ -1,0 +1,24 @@
+extends layout
+
+block headcontent
+	script(src="/javascripts/checkuser.js")
+	script(src="/javascripts/managedepartments.js")
+
+	script(type="text/javascript")
+		| var Role = "#{user.userRole}"
+
+block content
+	div.row
+		div.col-md-2
+		div.col-md-8
+			h2 Department Details
+			table.table.table-striped#departmentList
+				thead
+					tr
+						th Depatment
+						th Manager
+						th Description
+						th
+				tbody
+			button.btn(type='button' onclick='window.location.href="/adddepartments";') Add Department
+		div.col-md-2

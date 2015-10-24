@@ -1,0 +1,27 @@
+extends layout
+
+block headcontent
+	script(src="/javascripts/checkuser.js")
+	script(src="/javascripts/managepeople.js")
+
+	script(type="text/javascript")
+		| var Role = "#{user.userRole}"
+
+block content
+	div.row
+		div.col-md-2
+		div.col-md-8
+			h2 People Details
+			table.table.table-striped#peopleList
+				thead
+					tr
+						th Forename
+						th Surname
+						th Department
+						th Line Manager
+						th Manager
+						th Role
+						th
+				tbody
+			button.btn(type='button' onclick='window.location.href="/addpeople";') Add Person
+		div.col-md-2

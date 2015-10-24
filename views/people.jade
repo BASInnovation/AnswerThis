@@ -1,0 +1,43 @@
+extends layout
+
+block headcontent
+  script(src="/javascripts/checkuser.js")
+  script(src="/javascripts/people.js")
+
+  script(type="text/javascript")
+    | var Role = "#{user.userRole}"
+
+block content
+
+    div#banner-wrapper
+        div#banner.box.container
+            div.row
+                div.6u
+                    h2.white PEOPLE
+                    img.feature.titlelogo(src="/images/lsc-white.png")
+                div.6u
+                    p Meet The Team
+                    ul.title
+                        li Technology is seen as having a fundamental role in managing these shifts, facilitating the interface with customers whilst enabling better interrogation, collaboration and sharing of information. With experience of handling large scale data, we have the tools, knowledge and technologies to harness big data – collaboratively and securely – ensuring seamless integration of various data sources into one single view.
+
+    | <!-- Features -->
+    div#features-wrapper
+        div.container#departmentList
+
+    <!-- Main -->
+    div#main-wrapper
+        div.container
+            div.row
+                
+                div.8u.important(collapse)
+
+                    <!-- Content -->
+                    div#content
+                        section.last
+                            h2 Want to know more?
+                            p This is <strong>LSC Presales</strong>, a website used to view and demontrate apps and designs <a href="http://www.lsc-technology.co.uk">(LSC Group)</a>.
+                            The world of designa web is so vast that almost anything can be created as long as you have the creativity and the knowhow. Here we will demonstrate how creativity and coding blend together to create something wonderful.
+                            
+                            p Keep an eye out for new and upcoming projects that will help give you inspiration and an idea of what it is you are looking for when it comes to creating your own project.
+
+                            a.button.icon.fa-arrow-circle-right(href="left-sidebar.html") View Projects

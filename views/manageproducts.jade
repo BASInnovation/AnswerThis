@@ -1,0 +1,26 @@
+extends layout
+
+block headcontent
+	script(src="/javascripts/checkuser.js")
+	script(src="/javascripts/manageproducts.js")
+
+	script(type="text/javascript")
+		| var Role = "#{user.userRole}"
+
+block content
+	div.row
+		div.col-md-2
+		div.col-md-8
+			h2 Product Details
+			table.table.table-striped#productList
+				thead
+					tr
+						th Title
+						th Project Manager
+						th Project Tech
+						th Demo
+						th Featured
+						th
+				tbody
+			button.btn(type='button' onclick='window.location.href="/add_project";') Add Product
+		div.col-md-2

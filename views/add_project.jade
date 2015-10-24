@@ -1,0 +1,105 @@
+extends layout
+
+block headcontent
+  script(src="/javascripts/checkuser.js")
+  script(src="/javascripts/addProjects.js")
+
+  script(type="text/javascript")
+    | var Role = "#{user.userRole}"
+
+block content 
+    div.row
+        div.col-md-12
+            h2 ADD PROJECT
+            div
+                form.form-width(id='productForm', action='/add_project/addproduct', method='post', enctype='multipart/form-data')
+                    div.container.productcontainer
+                        div.row
+                            div.col-md-6
+                                div.form-group
+                                    img.mainproductimage#thumbnail(src="/images/SelectFile1.png")
+                                div.form-group
+                                    label Replace Main Product Image
+                                    input.form-control#displayImage(type="file", name='mainImage', required)
+                                    input.form-control#mainimageurl(type='text', name='mainImageUrl', placeholder='Main Image URL', style='display:none')
+                                    input.form-control#mainimagelabel(type='text', name='mainImageLabel', placeholder='Main Image Label', required)
+                                div.row
+                                    div.col-md-12
+                                        label Replace Sub Images
+                                    div.col-md-4
+                                        div.form-group
+                                            img.mainproductimage#subImage1Thumbnail(src="/images/SelectFile2.png")
+                                        div.form-group
+                                            input.form-control#subImage1(type="file", name='subImage1')
+                                            input.form-control#subImage1Url(type='text', name='SubImage1Url', placeholder='Sub Image 1 URL', style='display:none')
+                                            input.form-control#subImage1Label(type='text', name='SubImage1Label', placeholder='Sub Image 1 Label')
+                                    div.col-md-4
+                                        div.form-group
+                                            img.mainproductimage#subImage2Thumbnail(src="/images/SelectFile1.png")
+                                        div.form-group
+                                            input.form-control#subImage2(type="file", name='subImage2')
+                                            input.form-control#subImage2Url(type='text', name='SubImage2Url', placeholder='Sub Image 2 URL', style='display:none')
+                                            input.form-control#subImage2Label(type='text', name='SubImage2Label', placeholder='Sub Image 2 Label')
+                                    div.col-md-4
+                                        div.form-group
+                                            img.mainproductimage#subImage3Thumbnail(src="/images/SelectFile3.png")
+                                        div.form-group
+                                            input.form-control#subImage3(type="file", name='subImage3')
+                                            input.form-control#subImage3Url(type='text', name='SubImage3Url', placeholder='Sub Image 3 URL', style='display:none')
+                                            input.form-control#subImage3Label(type='text', name='SubImage3Label', placeholder='Sub Image 3 Label')
+                            div.col-md-6
+                                div.form-group
+                                    input.form-control#productId(type='text', name='productId', placeholder='Project ID', value=id, style='display:none')
+                                    input.form-control#dateCreated(type='text', name='dateCreated', placeholder='Date Created', style='display:none')
+                                div.form-group
+                                    label Product Name
+                                    input.form-control#productName(type='text', name='productName', placeholder='Project Name',required)
+                                table.table.table-striped
+                                    tr
+                                        td 
+                                            div.form-group
+                                                label PM
+                                                input.form-control#productPM(type='text', name='productPM', placeholder='Project Manager')
+                                        td 
+                                            div.form-group
+                                                label Tech
+                                                input.form-control#productTech(type='text', name='productTech', placeholder='Project Technology Expert')
+                                    tr
+                                        td
+                                            div.form-group
+                                                label Demo
+                                                input.form-control#productDemo(type='text', name='productDemo', placeholder='Project Demo Contact')
+                                        td
+                                            div.form-group
+                                                label References
+                                                input.form-control#productReferences(type='text', name='productReferences', placeholder='Project References')
+                                div.form-group
+                                    label Strap Line/Sub Heading
+                                    input.form-control#productStrapLine(type='text', name='productStrapLine', placeholder='Project Strap Line', required)
+                                div.form-group
+                                    label Description
+                                    textarea.form-control#productDescription(name='productDescription', placeholder='Project Description', required)
+                                div.row
+                                    div.col-md-12
+                                        label Video URL or File Upload
+                                    div.col-md-4
+                                        div.form-group
+                                            input.form-control#productVideo1(type='text', name='productVideo1', placeholder='Project Video URL 1')
+                                            input.form-control#productFile1(type="file", name='productFile1')
+                                    div.col-md-4
+                                        div.form-group
+                                            input.form-control#productVideo2(type='text', name='productVideo2', placeholder='Project Video URL 2')
+                                            input.form-control#productFile2(type="file", name='productFile2')
+                                    div.col-md-4
+                                        div.form-group
+                                            input.form-control#productVideo3(type='text', name='productVideo3', placeholder='Project Video URL 3')
+                                            input.form-control#productFile3(type="file", name='productFile3')
+                        div.row
+                            div.form-group
+                               label Featured Product
+                                    input#highlightProduct(type='checkbox', name='featuredProduct')
+                            button.btn(type='submit') &nbsp;Create Project
+                            span.clearfix
+                #message
+                if message
+                    h2.errorMessage #{message}

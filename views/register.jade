@@ -1,0 +1,36 @@
+extends layout
+
+block headcontent
+	script(src="/javascripts/checkuser.js")
+
+	script(type="text/javascript")
+		| var Role = "#{user.userRole}"
+
+block content
+	div.row
+		div.col-md-2
+		div.col-md-8
+			h2 ADD USER ACCOUNT
+			div
+				form.form-width(class='form-signin', action='/signup', method='POST')
+					div.form-group
+						input.form-control(type='text', name='username', class='form-control', placeholder='Username',required, autofocus)
+					div.form-group
+						input.form-control(type='password', name='password', class='form-control nomargin', placeholder='Password', required,)
+					div.form-group
+						input.form-control(type='email', name='email', class='form-control', placeholder='Email',required)
+					div.form-group
+						input.form-control(type='text', name='firstName', class='form-control', placeholder='First Name',required)
+					div.form-group
+						input.form-control(type='text', name='lastName', class='form-control', placeholder='Last Name',required)
+					div.form-group
+						select.form-control(name='role', class='form-control', required)
+							option(selected, disabled) Select Role
+							option admin
+							option contribute
+							option view
+					button.btn(type='submit') &nbsp;Register
+					span.clearfix
+				#message
+					if message
+						h2.errorMessage #{message}

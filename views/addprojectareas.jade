@@ -1,0 +1,26 @@
+extends layout
+
+block headcontent
+  script(src="/javascripts/checkuser.js")
+
+  script(type="text/javascript")
+    | var Role = "#{user.userRole}"
+
+block content
+    div.row
+        div.col-md-2
+        div.col-md-8
+            h2 ADD PROJECT AREA
+            div
+                form.form-width(id='projectAreaForm', action='/addprojectareas/addprojectarea', method='post', enctype='multipart/form-data')
+                    div.form-group
+                        input.form-control#projectAreaName(type='text', name='projectAreaName', placeholder='Project Area Name',required, autofocus)
+                    div.form-group
+                        input.form-control#projectAreaManager(type='text', name='projectAreaManager', placeholder='Project Area Manager', required)
+                    div.form-group
+                        input.form-control#projectAreaDescription(type='text', name='projectAreaDescription', placeholder='Project Area Description', required)
+                    button.btn(type='submit') &nbsp;Create Project Area
+                    span.clearfix
+            #message
+            if message
+                h2.errorMessage #{message}

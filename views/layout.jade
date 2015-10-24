@@ -1,0 +1,104 @@
+doctype html
+html(lan='en')
+  head
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    
+    link(rel='icon', type='image/png', href='/images/pre-icon.png')
+    
+    script(src='/javascripts/jquery.min.js')
+    script(src='/javascripts/menu.js')
+    //script(src='/javascripts/jquery.dropotron.min.js')
+    //script(src="/javascripts/jquery.slimmenu.js")
+    //script(src='/javascripts/skel.min.js')
+    //script(src='/javascripts/skel-layers.min.js')
+    script(src='/javascripts/bootstrap.js')
+    script(src='/javascripts/jquery.smartmenus.min.js')
+    script(src='/javascripts/jquery.smartmenus.bootstrap.min.js')
+
+    title= title
+    
+    //link(rel='stylesheet', href='/css/skel.css')
+    //link(rel='stylesheet', href='/css/style-desktop.css')
+    //link(rel='stylesheet', href='/css/slimmenu.css')
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/jquery.smartmenus.bootstrap.css')
+    link(rel='stylesheet', href='/css/style.css')
+  
+    block headcontent
+
+  body
+    div.navbar.navbar-default.navbar-static(role="navigation")
+      div.container-fluid
+        div.navbar-header
+          button.navbar-toggle.collapsed(type="button",data-toggle="collapse",data-target=".bs-example-js-navbar-collapse")
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a(href='/home')
+            img(src='/images/presalesNew.png')
+        div.collapse.navbar-collapse.bs-example-js-navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(href='/home') Home
+            li
+              a(href='/contact') Contact
+            li
+              a Products
+                span.caret
+              ul#productsMenu.dropdown-menu
+            li
+              a People
+                span.caret
+              ul#peopleMenu.dropdown-menu
+            li#addProject
+              a Manage Products
+                span.caret
+              ul.dropdown-menu
+                li
+                  a(href='/add_project') Add Product
+                li
+                  a(href='/manageproducts') Manage Products
+            li#addProjectArea
+              a Manage Project Areas
+                span.caret
+              ul.dropdown-menu
+                li
+                  a(href='/addprojectareas') Add Project Area
+                li
+                  a(href='/manageprojectareas') Manage Project Areas
+            li#addPeople
+              a Manage People
+                span.caret
+              ul.dropdown-menu
+                li
+                  a(href='/addpeople') Add People
+                li
+                  a(href='/managepeople') Manage People
+            li#addDepartments
+              a Manage Departments
+                span.caret
+              ul.dropdown-menu
+                li
+                  a(href='/adddepartments') Add Departments
+                li
+                  a(href='/managedepartments') Manage Departments
+            li#addUser
+              a Manage Accounts
+                span.caret
+              ul.dropdown-menu
+                li
+                  a(href='/signup') Add Account
+                li
+                  a(href='/manageusers') Manage Accounts
+            li
+              a(href='/signout') Logout
+
+    block content
+
+    div.footer
+      div.row.footerrow.back-orange
+        div.col-md-12 BAS Innovation
+      div.row
+        div.col-md-6.footersubrow.back-grey
+        div.col-md-6.footersubrow.back-blue

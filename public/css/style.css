@@ -1,0 +1,396 @@
+.imagerow
+{
+	margin:0px;
+}
+
+.imagecol-md-3
+{
+	padding:0px;
+}
+
+.navbar
+{
+	margin-bottom: 10px;
+	margin-top: 10px;
+	border: none;
+}
+
+.navbar-default
+{
+	background-color: #fff;
+	border-color: #fff;
+}
+
+#addUser
+{
+	display: none;
+}
+
+#addProject
+{
+	display: none;
+}
+
+#addDepartments
+{
+	display: none;
+}
+
+#addPeople
+{
+	display: none;
+}
+
+.textrow
+{
+	width: 98%;
+	margin: 30px auto;
+}
+
+.orange-underline
+{
+	text-decoration: underline;
+	color:#ff9900;
+}
+
+.blue-underline
+{
+	text-decoration: underline;
+	color:#038ced;
+}
+
+.grey-underline
+{
+	text-decoration: underline;
+	color: #1e1e1e;
+}
+
+.border-left
+{
+	border-left: 1px solid #1e1e1e;
+	padding-left:25px;
+}
+
+.pliantext
+{
+	color:black;
+}
+
+.box
+{
+	height: 234px;
+	text-align:center;
+	color:white;
+}
+
+.box h3
+{
+	font-size: 18px;
+	margin:0px;
+}
+
+.box h2
+{
+	margin:0px;
+}
+
+.box a
+{
+	color:#fff;
+}
+
+.box.back-blue
+ a:hover
+{
+	color:#ff9900;
+}
+
+.box.back-orange
+ a:hover
+{
+	color:#1e1e1e;
+}
+
+.box.back-grey
+ a:hover
+{
+	color:#038ced;
+}
+
+
+.back-blue
+{
+	background-color: #038ced;
+}
+
+.back-orange
+{
+	background-color: #ff9900;
+}
+
+.back-grey
+{
+	background-color: #1e1e1e;
+}
+
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.popupheader
+{
+  display:none;
+  position: absolute;
+  top: 0px;
+  background-color: rgba(0,0,0,0.7);
+  color: #fff;
+  width: 100%;
+}
+
+.popupheader h2
+{
+	margin: 0px;
+	padding: 10px;
+}
+
+.popupdesc
+{
+  display:none;
+  position: absolute;
+  bottom: 0px;
+  background-color: rgba(0,0,0,0.7);
+  color: #fff;
+  width: 100%;
+  height: 100px;
+ }
+
+.popupdesc h3
+{
+	margin: 0px;
+	padding: 10px;
+}
+
+.popupdesc p
+{
+	margin:0px;
+	padding: 0px 10px 10px 10px;
+}
+
+.center
+{
+	text-align: center;
+}
+
+label
+{
+	font-size: 18px;
+	text-align: left;
+	width:100%;
+}
+
+.loginform
+{
+	width: 70%;
+	margin: 0px auto 50px auto;
+}
+
+.errorMessage
+{
+	color:#AA0000;
+}
+
+#productImage
+{
+	height: 500px;
+	width:100%;
+	border-radius: 10px
+}
+
+.prodGalleryImage
+{
+	height: 150px;
+	width:100%;
+	border-radius: 10px 10px 0px 0px
+}
+
+.prodGalleryImageCol
+{
+	padding:0px;
+}
+
+.prodGalleryImage:hover
+{
+	cursor: pointer;
+}
+
+.videoTitle
+{
+	border-top: 5px solid #038ced;
+	color: #038ced;
+	font-weight: bold;
+	font-size: 20px;
+	padding: 10px 0px; 
+}
+
+.nopad
+{
+	padding:0px;
+}
+
+.container
+{
+	width: 100%;
+}
+
+.videoCol
+{
+	padding: 0px 5px;
+}
+
+#productDescription
+{
+	height: 230px;
+	overflow-y:scroll;
+	margin-bottom: 10px;
+}
+
+.productrow
+{
+	margin: 10px 0px 0px 0px;
+}
+
+.imagelabel
+{
+	padding: 5px 10px;
+	color: #fff;
+}
+
+.footer
+{
+	position:fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+}
+
+.footerrow
+{
+	margin: 0px;
+	height: 25px;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	line-height: 25px;
+}
+
+.footersubrow
+{
+	height: 5px;
+}
+
+.productcontainer
+{
+	margin-bottom: 30px;
+}
+
+h1.productTitle
+{
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+
+.pm 
+{
+	font-weight: bold;
+	color: #1e1e1e;
+}
+
+.tech
+{
+	font-weight: bold;
+	color: #038ced;
+}
+
+.demo
+{
+	font-weight: bold;
+	color: #ff9900;
+}
+
+.ref
+{
+	font-weight: bold;
+	color: #1e1e1e;
+}
+
+.navbar a:hover
+{
+	cursor: pointer;
+}
+
+#highlightProduct
+{
+	height: 20px;
+  	width: 20px;
+  	margin: 0px 10px 0px 10px;
+  	vertical-align: middle;
+}
+
+.form-width
+{
+	margin: 0px 10px 50px 10px;
+}
+
+.mainproductimage
+{
+	width: 100%;
+	height: auto;
+}
+
+#mainImageLabel
+{
+	display: none;
+}
+
+.mainImageBorder
+{
+	border: 1px solid #1e1e1e;
+	border-radius: 10px;
+}
+
+.border-orange
+{
+	border: 1px solid #ff9900;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.border-blue
+{
+	border: 1px solid #038ced;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.border-grey
+{
+	border: 1px solid #1e1e1e;
+	border-radius: 10px 10px 0px 0px;
+}
+
+#userThumbnail
+{
+	height: 300px;
+	width: auto;
+}

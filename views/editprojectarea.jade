@@ -1,0 +1,29 @@
+extends layout
+
+block headcontent
+  script(src="/javascripts/checkuser.js")
+  script(src="/javascripts/editprojectarea.js")
+
+  script(type="text/javascript")
+    | var Role = "#{user.userRole}"
+
+block content
+    div.row
+        div.col-md-2
+        div.col-md-8
+            h2 EDIT PROJECT AREA
+            div
+                form.form-width(id='productForm', action='/projectareas/updateprojectarea/' + id, method='post', enctype='multipart/form-data')
+                    div.form-group
+                        input.form-control#projectAreaId(type='text', name='projectAreaId', placeholder='Project Area ID', autofocus, style='display:none', value=id)
+                    div.form-group
+                        input.form-control#projectAreaName(type='text', name='projectAreaName', placeholder='Project Area Name',required, autofocus)
+                    div.form-group
+                        input.form-control#projectAreaManager(type='text', name='projectAreaManager', placeholder='Project Area Manager', required)
+                    div.form-group
+                        input.form-control#projectAreaDescription(type='text', name='projectAreaDescription', placeholder='Project Area Description', required)
+                    button.icon.fa-arrow-circle-right.formButtom200(type='submit') &nbsp;Update Project Area
+                    span.clearfix
+            #message
+            if message
+                h2.errorMessage #{message}

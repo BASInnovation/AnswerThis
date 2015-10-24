@@ -1,0 +1,44 @@
+extends layout
+
+block headcontent
+  script(src="/javascripts/checkuser.js")
+  script(src="/javascripts/person.js")
+
+  script(type="text/javascript")
+    | var Role = "#{user.username}"
+
+block content
+
+    div#main-wrapper
+        div.container
+            div.row.200
+                div.4u
+                    div#sidebar
+                
+                        section
+                            h3#department
+
+                            img.feature.titlelogo#personImage(src="/images/img1.png" alt="Presales Holding Page")
+
+                            p <b>Line Manager:</b> 
+                                span#lineManager
+                            p <b>Manager:</b> 
+                                span#manager
+                            p <b>Role:</b>
+                                span#role
+                            p <b>Skills:</b> 
+                                span#skills
+
+                div.8u.important(collapse)
+                    div#content
+
+                        article
+
+                            h2#personName
+
+                            h4.darkGrey Meet 
+                                span#foreName James
+
+                            p#personDescription
+
+        input#personId(value=id, hidden)

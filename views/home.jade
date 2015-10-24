@@ -1,0 +1,27 @@
+extends layout
+
+block headcontent
+  script(src="/javascripts/checkuser.js")
+  script(src="/javascripts/home.js")
+
+  script(type="text/javascript")
+    | var Role = "#{user.userRole}"
+
+block content
+ 
+  div
+    div#projectsList
+
+  div.row.textrow
+    div.col-md-4
+      h2.orange-underline 
+        span.pliantext ABOUT PRESALES
+      p Technology is seen as having a fundamental role in managing these shifts, facilitating the interface with customers whilst enabling better interrogation, collaboration and sharing of information. With experience of handling large scale data, we have the tools, knowledge and technologies to harness big data – collaboratively and securely – ensuring seamless integration of various data sources into one single view.
+    div.col-md-4.border-left
+      h2.grey-underline 
+        span.pliantext INNOVATION
+      p Technology is seen as having a fundamental role in managing these shifts, facilitating the interface with customers whilst enabling better interrogation, collaboration and sharing of information. With experience of handling large scale data, we have the tools, knowledge and technologies to harness big data – collaboratively and securely – ensuring seamless integration of various data sources into one single view.
+    div.col-md-4.border-left
+      h2.blue-underline 
+        span.pliantext WORK & PROJECTS
+      p Technology is seen as having a fundamental role in managing these shifts, facilitating the interface with customers whilst enabling better interrogation, collaboration and sharing of information. With experience of handling large scale data, we have the tools, knowledge and technologies to harness big data – collaboratively and securely – ensuring seamless integration of various data sources into one single view.

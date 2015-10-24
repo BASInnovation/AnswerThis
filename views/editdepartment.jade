@@ -1,0 +1,29 @@
+extends layout
+
+block headcontent
+  script(src="/javascripts/checkuser.js")
+  script(src="/javascripts/editdepartment.js")
+
+  script(type="text/javascript")
+    | var Role = "#{user.userRole}"
+
+block content
+    div.row
+        div.col-md-2
+        div.col-md-8
+            h2 EDIT DEPARTMENT
+            div
+                form.form-width(id='productForm', action='/departments/updatedepartment/' + id, method='post', enctype='multipart/form-data')
+                    div.form-group
+                        input.form-control#departmentId(type='text', name='departmentId', placeholder='Department ID', autofocus, style='display:none', value=id)
+                    div.form-group
+                        input.form-control#departmentName(type='text', name='departmentName', placeholder='Department Name',required, autofocus)
+                    div.form-group
+                        input.form-control#departmentManager(type='text', name='departmentManager', placeholder='Department Manager', required)
+                    div.form-group
+                        input.form-control#departmentDescription(type='text', name='departmentDescription', placeholder='Department Description', required)
+                    button.icon.fa-arrow-circle-right.formButtom200(type='submit') &nbsp;Update Department
+                    span.clearfix
+            #message
+            if message
+                h2.errorMessage #{message}
