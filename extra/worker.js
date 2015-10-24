@@ -4,7 +4,7 @@ exports.Calculate = function Calculate(message,callback)
 {
     var result = "";
 
-    tokenize('2 + 2')
+    console.log(tokenize(message));
 
     callback(null,result);
 
@@ -17,8 +17,7 @@ function tokenize(code) {
     var m;
     while ((m = tokenRegExp.exec(code)) !== null)
         results.push(m[1]);
-    
-    console.log(results);
 
-    //return results;
+    return results;
 }
+
