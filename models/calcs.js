@@ -4,7 +4,7 @@ db.bind('request');
 
 exports.insertRequest = function insertRequest(calcrequest,result,callback) {
 
-    db.collection('bands').insert({request:calcrequest,answer:result}, function(err, result) {
+    db.collection('request').insert({request:calcrequest,answer:result}, function(err, result) {
         if (err) {
             console.log(err);
 
