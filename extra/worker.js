@@ -4,7 +4,7 @@ exports.Calculate = function Calculate(message,callback)
 {
     var result = "";
 
-    console.log(tokenize(message));
+    console.log(isNumber('2'));
 
     callback(null,result);
 
@@ -19,5 +19,9 @@ function tokenize(code) {
         results.push(m[1]);
 
     return results;
+}
+
+function isNumber(token) {
+    return token !== undefined && token.match(/^[0-9]+$/) !== null;
 }
 
