@@ -4,7 +4,7 @@ exports.Calculate = function Calculate(message,callback)
 {
     var result = "";
 
-    console.log(isName('H'));
+    result = evaluateAsFloat(message);
 
     callback(null,result);
 
@@ -96,5 +96,24 @@ function parse(code) {
         throw new SyntaxError("unexpected '" + peek() + "'");
 
     return result;
+}
+
+function evaluateAsFloat(code) {
+    var variables = Object.create(null);
+    variables.e = Math.E;
+    variables.pi = Math.PI;
+
+    function evaluate(obj) {
+        switch (obj.type) {
+        case "number":  return parseInt(obj.value);
+        case "name":  return variables[obj.id] || 0;
+        case "+":  return evaluate(obj.left) + evaluate(obj.right);
+        case "-":  return evaluate(obj.left) - evaluate(obj.right);
+        case "*":  return evaluate(obj.left) * evaluate(obj.right);
+        case "/":  return evaluate(obj.left) / evaluate(obj.right);
+        }
+    }
+
+    return evaluate(parse(code));
 }
 
