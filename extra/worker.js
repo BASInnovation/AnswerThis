@@ -4,6 +4,8 @@ exports.Calculate = function Calculate(message,callback)
 {
     var result = "";
 
+    console.log(evaluateAsFloat(message));
+
     result = evaluateAsFloat(message);
 
     callback(null,result);
