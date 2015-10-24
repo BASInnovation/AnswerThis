@@ -1,0 +1,59 @@
+html
+    head
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+
+        title Answer This
+        
+        script(src='/javascripts/jquery.min.js')
+        script(src='/javascripts/bootstrap.js')
+
+        link(rel="stylesheet", type="text/css", href="/css/bootstrap.css")
+        link(rel="stylesheet", type="text/css", href="/css/style.css")
+    body
+        .row
+            .col-sm-2.calculatorsidemenu
+                .row
+                    .col-sm-12
+                        h2 Answer This
+                .row
+                    .col-sm-3
+                        img.numberbutton(src="/images/1.png")
+                    .col-sm-3
+                        img.numberbutton(src="/images/2.png")
+                    .col-sm-3
+                        img.numberbutton(src="/images/3.png")
+                    .col-sm-3
+                        img.numberbutton(src="/images/plus.png")
+                 .row
+                    .col-sm-3
+                        img.numberbutton(src="/images/4.png")
+                    .col-sm-3
+                        img.numberbutton(src="/images/5.png")
+                    .col-sm-3
+                        img.numberbutton(src="/images/6.png")
+                    .col-sm-3
+                        img.numberbutton(src="/images/minus.png")
+                .row
+                    .col-sm-3
+                        img.numberbutton(src="/images/7.png")
+                    .col-sm-3
+                        img.numberbutton(src="/images/8.png")
+                    .col-sm-3
+                        img.numberbutton(src="/images/9.png")
+                    .col-sm-3
+                        img.numberbutton(src="/images/multiply.png")
+                .row
+                    .col-sm-3
+                    .col-sm-3
+                    .col-sm-3
+                        img.numberbutton(src="/images/0.png")
+                    .col-sm-3
+                        img.numberbutton(src="/images/divide.png")
+                .row
+                    .col-sm-12.calcinput
+                        input.form-control(type="text")
+                .row
+                    .col-sm-12.calcbutton
+                        button.btn.btn-default(type="button") Send Calculation
+            .col-sm-10.calculatorstats
+                .statscontainer
