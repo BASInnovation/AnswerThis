@@ -4,7 +4,9 @@ db.bind('request');
 
 exports.insertRequest = function insertRequest(calcrequest,result,callback) {
 
-    db.collection('request').insert({request:calcrequest,answer:result}, function(err, result) {
+    date = new Date();
+
+    db.collection('request').insert({dateadded:date,request:calcrequest,answer:result}, function(err, result) {
         if (err) {
             console.log(err);
 
