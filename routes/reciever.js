@@ -10,21 +10,23 @@ exports.TextRecieved = function(req, res){
    // work out text message
    // get varibles out of message
 
-   var fromNumber =  req.params.from;
-   var txtMessage = req.params.content;
-   var msg_id = req.params.msg_id;
-    var keyword = req.params.hello;
+   var fromNumber =  req.query.from;
+   var txtMessage = req.query.content;
+   var msg_id = req.query.msg_id;
+    var keyword = req.query.hello;
+
+    console.log("fromNumber" + fromNumber);
+    console.log("txtMessage" + txtMessage);
 
     worker.Calculate(txtMessage,function(err,result){
 
     //phils reply in here.
+    if (result == ""){result = "why the blank message? :( ";}
 
 
 
     // save to db
         dbcalcs.insertRequest(txtMessage,result,function(err,dbresult){
-
-
 
 
             //right lets send the response back to the user.
