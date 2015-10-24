@@ -1,0 +1,88 @@
+html(lang="en")
+
+head
+
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+
+    title SB Admin 2 - Bootstrap Admin Theme
+
+    link(href="/css/bootstrap.css", rel="stylesheet")
+    link(href="/css/sb-admin-2.css" rel="stylesheet")
+
+    script(src="/javascripts/jquery.min.js")
+    script(src="/javascripts/bootstrap.js")
+
+body
+
+    #wrapper
+
+        nav.navbar.navbar-default.navbar-static-top(role="navigation", style="margin-bottom: 0")
+            .navbar-header
+                a.navbar-brand(href="#") Answer This
+
+            .navbar-default.sidebar(role="navigation")
+                .sidebar-nav.navbar-collapse
+
+        #page-wrapper
+            .row
+                .col-lg-12
+                    h1.page-header Dashboard
+
+            .row
+                .col-lg-3.col-md-6
+                    .panel.panel-primary
+                        .panel-heading
+                            .row
+                                .col-xs-3
+                                    i.fa.fa-comments.fa-5x
+                                .col-xs-9.text-right
+                                    .huge 26
+                                    div New Comments!
+
+                .col-lg-3.col-md-6
+                    .panel.panel-green
+                        .panel-heading
+                            .row
+                                .col-xs-3
+                                    i.fa.fa-tasks.fa-5x
+                                .col-xs-9.text-right
+                                    .huge 12
+                                    div New Tasks!
+                .col-lg-3.col-md-6
+                    .panel.panel-yellow
+                        .panel-heading
+                            .row
+                                .col-xs-3
+                                    i.fa.fa-shopping-cart.fa-5x
+                                .col-xs-9.text-right
+                                    .huge 124
+                                    div New Orders!
+                .col-lg-3.col-md-6
+                    .panel.panel-red
+                        .panel-heading
+                            .row
+                                .col-xs-3
+                                    i.fa.fa-support.fa-5x
+                                .col-xs-9.text-right
+                                    .huge 13
+                                    div Support Tickets!
+            .row
+                .col-lg-8
+                    .panel.panel-default
+                        .panel-heading
+                            i.fa.fa-bar-chart-o.fa-fw Area Chart Example
+                        .panel-body
+                            #morris-area-chart
+
+                    .panel.panel-default
+                        .panel-heading
+                            i.fa.fa-bar-chart-o.fa-fw Bar Chart Example
+                        .panel-body
+
+                .col-lg-4
+                    .panel.panel-default
+                        .panel-heading
+                            i.fa.fa-bell.fa-fw Notifications Panel
+                        .panel-body
