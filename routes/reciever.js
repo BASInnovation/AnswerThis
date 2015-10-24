@@ -20,8 +20,11 @@ exports.TextRecieved = function(req, res){
     //phils reply in here.
 
 
+
     // save to db
         dbcalcs.insertRequest(txtMessage,result,function(err,dbresult){
+
+
 
 
             //right lets send the response back to the user.

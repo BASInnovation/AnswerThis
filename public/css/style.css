@@ -1,0 +1,40 @@
+.calculatorstats
+{
+	height: 100vh;
+	background-image: url('../images/background590.jpg');
+}
+
+h2
+{
+	color: white;
+}
+
+.calculatorsidemenu
+{
+	background-color: rgba(0,0,0,0.8);
+	height: 100vh;
+}
+
+.statscontainer
+{
+	background-color: rgba(0,0,0,0.8);
+	width:96%;
+	height:94%;
+	margin:2%;
+}
+
+.numberbutton
+{
+	padding: 10px;
+}
+
+.calcinput
+{
+	padding: 10px 10px 10px 20px;
+}
+
+.clacbutton
+{
+	padding: 10px 10px 10px 20px;
+}
+
