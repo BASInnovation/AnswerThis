@@ -4,11 +4,25 @@ exports.Calculate = function Calculate(message,callback)
 {
     var result = "";
 
+    var calculatorwords = [];
+
     //console.log('Message: ' + message);
 
     //console.log('Result: ' + evaluateAsFloat(message));
 
     result = evaluateAsFloat(message);
+
+
+    switch(result) {
+    case 5138008:
+        result = 'BOOBIES!!'
+        break;
+    case 5136006:
+        result = 'BOOBIES!!'
+        break;
+    default:
+        break;
+    }
 
     callback(null,result);
 
