@@ -31,7 +31,7 @@ exports.TextRecieved = function(req, res){
 
             var clockwork = require('clockwork')({key:'be3f36d428fd67ddbf1766c8c0473a394555be59'});
 
-            clockwork.sendSms({ To: '447812057666', Content: 'Test!'},
+            clockwork.sendSms({ To: fromNumber, Content: result},
                 function(error, resp) {
                     if (error) {
                         console.log('Something went wrong', error);
