@@ -22,7 +22,6 @@ function removehover(item)
 
 function calcclick(item)
 {
-    console.log($(item).attr('id'));
     
     if($(item).attr('id') == 'minus')
     {
@@ -54,9 +53,8 @@ function calcclear()
 
 function sendcalc()
 {
-    $.getJSON('http://127.0.0.1:3000/gettexttest?id=AB_123&to=1234&from=' + $('#tel').val() + '&keyword=hello&content=5337%2B1', function(data) {
+    $.getJSON('http://answerthis.cloudapp.net/gettext?id=AB_123&to=1234&from=' + $('#tel').val() + '&keyword=hello&content=' + encodeURIComponent($('#calcinput').val()), function(data) {
         //var maxQuestions = data.length;
-        console.log(data);
         if(data)
         {
             $('#feedback').html('Calculation Sent!!')
