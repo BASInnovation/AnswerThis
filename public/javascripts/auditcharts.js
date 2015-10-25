@@ -53,7 +53,7 @@ function calcclear()
 
 function sendcalc()
 {
-    $.getJSON('http://localhost:3000/gettext?id=AB_123&to=1234&from=' + $('#tel').val() + '&keyword=hello&content=' + encodeURIComponent($('#calcinput').val()), function(data) {
+    $.getJSON('http://answerthis.cloudapp.net/gettext?id=AB_123&to=1234&from=' + $('#tel').val() + '&keyword=hello&content=' + encodeURIComponent($('#calcinput').val()), function(data) {
         //http://answerthis.cloudapp.net
         //var maxQuestions = data.length;
         
