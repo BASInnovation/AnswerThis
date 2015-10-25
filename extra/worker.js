@@ -531,7 +531,7 @@ function CheckForType(message)
         var actualResult = evaluateAsFloat(message);
         var messageResult = '';
         if (calculatorwords[actualResult]) {
-             messageResult = calculatorwords[result].toUpperCase() + '!!';
+             messageResult = calculatorwords[actualResult].toUpperCase() + '!!';
         }
 
         return {'actualResult': actualResult, 'message':messageResult}
