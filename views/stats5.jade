@@ -10,6 +10,7 @@ head
 
     link(href="/css/bootstrap.css", rel="stylesheet")
     link(href="/css/sb-admin-2.css" rel="stylesheet")
+    link(href="/css/style.css" rel="stylesheet")
 
     script(src="/javascripts/jquery.min.js")
     script(src="/javascripts/bootstrap.js")
@@ -28,7 +29,53 @@ body
 
             .navbar-default.sidebar(role="navigation")
                 .sidebar-nav.navbar-collapse
-
+                    .row
+                        .col-sm-2
+                            img#1.numberbutton(src="/images/1.png",onmouseover="hover(this)",onmouseout="removehover(this)",onclick="calcclick(this)")
+                        .col-sm-2
+                            img#2.numberbutton(src="/images/2.png",onmouseover="hover(this)",onmouseout="removehover(this)",onclick="calcclick(this)")
+                        .col-sm-2
+                            img#3.numberbutton(src="/images/3.png",onmouseover="hover(this)",onmouseout="removehover(this)",onclick="calcclick(this)")
+                        .col-sm-2
+                            img#plus.numberbutton(src="/images/plus.png",onmouseover="hover(this)",onmouseout="removehover(this)",onclick="calcclick(this)")
+                     .row
+                        .col-sm-2
+                            img#4.numberbutton(src="/images/4.png",onmouseover="hover(this)",onmouseout="removehover(this)",onclick="calcclick(this)")
+                        .col-sm-2
+                            img#5.numberbutton(src="/images/5.png",onmouseover="hover(this)",onmouseout="removehover(this)",onclick="calcclick(this)")
+                        .col-sm-2
+                            img#6.numberbutton(src="/images/6.png",onmouseover="hover(this)",onmouseout="removehover(this)",onclick="calcclick(this)")
+                        .col-sm-2
+                            img#minus.numberbutton(src="/images/minus.png",onmouseover="hover(this)",onmouseout="removehover(this)",onclick="calcclick(this)")
+                    .row
+                        .col-sm-2
+                            img#7.numberbutton(src="/images/7.png",onmouseover="hover(this)",onmouseout="removehover(this)",onclick="calcclick(this)")
+                        .col-sm-2
+                            img#8.numberbutton(src="/images/8.png",onmouseover="hover(this)",onmouseout="removehover(this)",onclick="calcclick(this)")
+                        .col-sm-2
+                            img#9.numberbutton(src="/images/9.png",onmouseover="hover(this)",onmouseout="removehover(this)",onclick="calcclick(this)")
+                        .col-sm-2
+                            img#multiply.numberbutton(src="/images/multiply.png",onmouseover="hover(this)",onmouseout="removehover(this)",onclick="calcclick(this)")
+                    .row
+                        .col-sm-2
+                            img#clear.numberbutton(src="/images/clear.png",onmouseover="hover(this)",onmouseout="removehover(this)",onclick="calcclear()")
+                        .col-sm-2
+                        .col-sm-2
+                            img#0.numberbutton(src="/images/0.png",onmouseover="hover(this)",onmouseout="removehover(this)",onclick="calcclick(this)")
+                        .col-sm-2
+                            img#divide.numberbutton(src="/images/divide.png",onmouseover="hover(this)",onmouseout="removehover(this)",onclick="calcclick(this)")
+                    .row
+                        .col-sm-9.calcinput
+                            input#calcinput.form-control(type="text")
+                    .row
+                        .col-sm-9
+                            #feedback
+                    .row
+                        .col-sm-9.tel
+                            input#tel.form-control(type="text", placeholder="Mobile Number")
+                    .row
+                        .col-sm-9.calcbutton
+                            button.btn.btn-default(type="button",onclick="sendcalc()") Send Calculation
         #page-wrapper
             .row
                 .col-lg-12

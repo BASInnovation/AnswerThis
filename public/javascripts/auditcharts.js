@@ -6,12 +6,71 @@ window.onload = function() {
  
 }
 
+function hover(item)
+{
+    $(item).css('cursor','pointer');
+    $(item).attr('src','/images/' + $(item).attr('id') + 'hover.png');
+}
+
+function removehover(item)
+{   
+    $(item).css('cursor','none');
+    $(item).attr('src','/images/' + $(item).attr('id') + '.png');
+}
+
+function calcclick(item)
+{
+    console.log($(item).attr('id'));
+    
+    if($(item).attr('id') == 'minus')
+    {
+        $('#calcinput').val($('#calcinput').val()+'-');
+    }
+    else if($(item).attr('id') == 'plus')
+    {
+        $('#calcinput').val($('#calcinput').val()+'+');
+    }
+    else if($(item).attr('id') == 'multiply')
+    {
+        $('#calcinput').val($('#calcinput').val()+'*');
+    }
+    else if($(item).attr('id') == 'divide')
+    {
+        $('#calcinput').val($('#calcinput').val()+'/');
+    }
+    else
+    {
+        $('#calcinput').val($('#calcinput').val() + $(item).attr('id'));
+    }
+}
+
+function calcclear()
+{
+    $('#calcinput').val('');
+    $('#feedback').html('')
+}
+
+function sendcalc()
+{
+    $.getJSON('http://127.0.0.1:3000/gettexttest?id=AB_123&to=1234&from=' + $('#tel').val() + '&keyword=hello&content=5337%2B1', function(data) {
+        //var maxQuestions = data.length;
+        console.log(data);
+        if(data)
+        {
+            $('#feedback').html('Calculation Sent!!')
+        }
+
+    });
+
+}
+
 function populateauditinfo()
 {
     var calcsdatafeed = JSON.parse(calcs.replace(/&quot;/g, '"'));
 
     var html = "";
     var total = 0;
+    var answers = [];
 
     for(i=0;i<calcsdatafeed.length;i++)
     {
@@ -22,12 +81,13 @@ function populateauditinfo()
         html += "</tr>"
 
         total += (calcsdatafeed[i].answer-0);
+        answers.push(calcsdatafeed[i].answer);
     }
-
-    console.log(total);
 
     $('#latestTable > tbody').html(html);
     $('#total').html(total);
+
+    $('#largest').html(Math.max.apply(Math, answers));
 }
 
 function createChart1()
@@ -99,8 +159,6 @@ function createChart1()
         d = new Date(calcsdatafeed[j].dateadded);
         calclabels.push(d.toLocaleTimeString())
     }
-
-    console.log(calcdata);
 
     var data = {
         labels: calclabels,
