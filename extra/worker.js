@@ -138,6 +138,7 @@ function CheckForType(message)
 {
 
     var calculatorwords = {338:'bee',
+        69:'69 ;)',
         5338:'bees',
         638:'beg',
         5638:'begs',
@@ -495,7 +496,7 @@ function CheckForType(message)
 
     message = message.toUpperCase().trim();
 
-    if (message.indexOf('PIE') > 0)
+    if (message.indexOf('PI') > 0)
     {
         return Math.pi;
 
