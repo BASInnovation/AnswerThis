@@ -20,8 +20,12 @@ exports.TextRecieved = function(req, res){
 
     worker.Calculate(txtMessage,function(err,result){
 
+    if (result.message == "")
+    {
+        result.message = result.actualResult + "";
+    }
     //phils reply in here.
-    if (result == ""){result = "why the blank message? :( ";}
+    if (result.message == ""){result.message = "why the blank message? :( ";}
 
 
 
@@ -30,10 +34,10 @@ exports.TextRecieved = function(req, res){
 
 
             //right lets send the response back to the user.
-
+            console.log("message to be sent " + result.message);
             var clockwork = require('clockwork')({key:'be3f36d428fd67ddbf1766c8c0473a394555be59'});
 
-            clockwork.sendSms({ To: fromNumber, Content: result},
+            clockwork.sendSms({ To: fromNumber, Content: result.message},
                 function(error, resp) {
                     if (error) {
                         console.log('Something went wrong', error);
