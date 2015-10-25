@@ -1,8 +1,10 @@
+var numbercounts = [];
+
 window.onload = function() {
  
+    populateauditinfo();
     createChart1();
     createChart2();
-    populateauditinfo();
  
 }
 
@@ -71,6 +73,18 @@ function populateauditinfo()
     var html = "";
     var total = 0;
     var answers = [];
+    var eightcount = 0;
+    var requests = [];
+    var onecount = 0;
+    var twocount = 0;
+    var threecount = 0;
+    var fourcount = 0;
+    var fivecount = 0;
+    var sixcount = 0;
+    var sevencount = 0;
+    var eightcount = 0;
+    var ninecount = 0;
+    var zerocount = 0;
 
     for(i=0;i<calcsdatafeed.length;i++)
     {
@@ -80,14 +94,101 @@ function populateauditinfo()
         html += "<td>" + calcsdatafeed[i].message + "</td>"
         html += "</tr>"
 
+        var answersplit = calcsdatafeed[i].answer.toString().split('');
+
+        for(j=0;j<answersplit.length;j++)
+        {
+            if(answersplit[j]==8)
+            {
+                eightcount+=1;
+            }
+            
+        }
+
+        var requestsplit = calcsdatafeed[i].request.split('');
+
+        for(k=0;k<requestsplit.length;k++)
+        {
+
+            switch(requestsplit[k])
+            {
+                case '1':
+                    onecount+=1;
+                    break;
+                case '2':
+                    twocount+=1;
+                    break;
+                case '3':
+                    threecount+=1;
+                    break;
+                case '4':
+                    fourcount+=1;
+                    break;
+                case '5':
+                    fivecount+=1;
+                    break;
+                case '6':
+                    sixcount+=1;
+                    break;
+                case '7':
+                    sevencount+=1;
+                    break;
+                case '8':
+                    eightcount+=1;
+                    break;
+                case '9':
+                    ninecount+=1;
+                    break;
+                case '0':
+                    zerocount+=1;
+                    break;
+            }
+            
+        }
+
         total += (calcsdatafeed[i].answer-0);
         answers.push(calcsdatafeed[i].answer);
+        requests.push(calcsdatafeed[i].request)
     }
+
+    numbercounts.push(onecount);
+    numbercounts.push(twocount);
+    numbercounts.push(threecount);
+    numbercounts.push(fourcount);
+    numbercounts.push(fivecount);
+    numbercounts.push(sixcount);
+    numbercounts.push(sevencount);
+    numbercounts.push(eightcount);
+    numbercounts.push(ninecount);
+    numbercounts.push(zerocount);
 
     $('#latestTable > tbody').html(html);
     $('#total').html(total);
-
+    $('#eight').html(eightcount);
     $('#largest').html(Math.max.apply(Math, answers));
+    $('#common').html(common(requests));
+}
+
+function common(array)
+{
+    if(array.length == 0)
+        return null;
+    var modeMap = {};
+    var maxEl = array[0], maxCount = 1;
+    for(var i = 0; i < array.length; i++)
+    {
+        var el = array[i];
+        if(modeMap[el] == null)
+            modeMap[el] = 1;
+        else
+            modeMap[el]++;  
+        if(modeMap[el] > maxCount)
+        {
+            maxEl = el;
+            maxCount = modeMap[el];
+        }
+    }
+    return maxEl;
 }
 
 function createChart1()
@@ -220,23 +321,15 @@ function createChart2()
     }
 
     var data = {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
         datasets: [
             {
                 label: "My First dataset",
-                fillColor: "rgba(220,220,220,0.5)",
-                strokeColor: "rgba(220,220,220,0.8)",
-                highlightFill: "rgba(220,220,220,0.75)",
-                highlightStroke: "rgba(220,220,220,1)",
-                data: [65, 59, 80, 81, 56, 55, 40]
-            },
-            {
-                label: "My Second dataset",
                 fillColor: "rgba(151,187,205,0.5)",
                 strokeColor: "rgba(151,187,205,0.8)",
                 highlightFill: "rgba(151,187,205,0.75)",
                 highlightStroke: "rgba(151,187,205,1)",
-                data: [28, 48, 40, 19, 86, 27, 90]
+                data: numbercounts
             }
         ]
     };
