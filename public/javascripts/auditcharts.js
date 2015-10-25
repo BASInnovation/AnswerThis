@@ -96,7 +96,7 @@ function populateauditinfo()
         
         if(isNumber(calcsdatafeed[i].message))
         {
-            html += "<td>" + calcsdatafeed[i].message.toFixed(2) + "</td>"
+            html += "<td>" + parseFloat(calcsdatafeed[i].message).toFixed(2) + "</td>"
         }
         else
         {
