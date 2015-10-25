@@ -496,9 +496,12 @@ function CheckForType(message)
 
     message = message.toUpperCase().trim();
 
-    if (message.indexOf('PI') > 0)
+    console.log("Message uppercase" + message);
+    if (message.indexOf('PI') >= 0)
     {
-        return Math.pi;
+        console.log("pie");
+        var pi =  Math.PI;
+        return {'actualResult': pi, 'message':pi + ''};
 
     }
     else if(message.indexOf('KG') > 0 && message.indexOf('LB') > 0)
