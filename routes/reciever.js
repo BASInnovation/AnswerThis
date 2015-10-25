@@ -15,8 +15,8 @@ exports.TextRecieved = function(req, res){
    var msg_id = req.query.msg_id;
     var keyword = req.query.hello;
 
-    console.log("fromNumber" + fromNumber);
-    console.log("txtMessage" + txtMessage);
+    //console.log("fromNumber" + fromNumber);
+    //console.log("txtMessage" + txtMessage);
 
     worker.Calculate(txtMessage,function(err,result){
 
@@ -34,7 +34,7 @@ exports.TextRecieved = function(req, res){
 
 
             //right lets send the response back to the user.
-            console.log("message to be sent " + result.message);
+            //console.log("message to be sent " + result.message);
             var clockwork = require('clockwork')({key:'be3f36d428fd67ddbf1766c8c0473a394555be59'});
 
             clockwork.sendSms({ To: fromNumber, Content: result.message},
@@ -84,8 +84,8 @@ exports.TextRecievedTest = function(req, res){
     var keyword = req.query.hello;
 
 
-    console.log("fromNumber" + fromNumber);
-    console.log("txtMessage" + txtMessage);
+    //console.log("fromNumber" + fromNumber);
+    //console.log("txtMessage" + txtMessage);
 
 
 

@@ -1,7 +1,7 @@
 var numbercounts = [];
 
 window.onload = function() {
- 
+
     populateauditinfo();
     createChart1();
     createChart2();
@@ -48,13 +48,17 @@ function calcclick(item)
 function calcclear()
 {
     $('#calcinput').val('');
-    $('#feedback').html('')
+    $('#feedback').html('');
 }
 
 function sendcalc()
 {
-    $.getJSON('http://answerthis.cloudapp.net/gettext?id=AB_123&to=1234&from=' + $('#tel').val() + '&keyword=hello&content=' + encodeURIComponent($('#calcinput').val()), function(data) {
+    $.getJSON('http://localhost:3000/gettext?id=AB_123&to=1234&from=' + $('#tel').val() + '&keyword=hello&content=' + encodeURIComponent($('#calcinput').val()), function(data) {
+        //http://answerthis.cloudapp.net
         //var maxQuestions = data.length;
+        
+        console.log('DATA: ' + data);
+
         if(data)
         {
             $('#feedback').html('Calculation Sent!!')

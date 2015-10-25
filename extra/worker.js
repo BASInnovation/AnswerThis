@@ -13,12 +13,12 @@ exports.Calculate = function Calculate(message,callback)
 
     ///if (message.upindexOf("KG"))
 
-    console.log("mes" + message);
+    //console.log("mes" + message);
 
     result = CheckForType(message);
 
 
-    console.log("here" + result);
+    //console.log("here" + result);
 
 
 
@@ -49,6 +49,8 @@ function isName(token) {
 function parse(code) {
 
     var tokens = tokenize(code);
+
+    //console.log(tokens);
 
     var position = 0;
 
@@ -496,10 +498,10 @@ function CheckForType(message)
 
     message = message.toUpperCase().trim();
 
-    console.log("Message uppercase" + message);
+    //console.log("Message uppercase" + message);
     if (message.indexOf('PI') >= 0)
     {
-        console.log("pie");
+        //console.log("pie");
         var pi =  Math.PI;
         return {'actualResult': pi, 'message':pi + ''};
 
@@ -514,7 +516,7 @@ function CheckForType(message)
         var numberPattern = /\d+/g;
         var resultNumber = part1.match( numberPattern );
 
-        console.log("our number to convert" + resultNumber);
+        //console.log("our number to convert" + resultNumber);
 
 
 
@@ -545,7 +547,7 @@ function CheckForType(message)
     else {
 
         //this is maths/////
-        console.log("In Math");
+        //console.log("In Math");
         var actualResult = evaluateAsFloat(message);
         var messageResult = '';
         if (calculatorwords[actualResult]) {
@@ -572,7 +574,7 @@ function Convert(message,type)
     if (type == 1) {
 
 
-        console.log(result);
+        //console.log(result);
     }
 
 

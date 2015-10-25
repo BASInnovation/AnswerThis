@@ -25,7 +25,7 @@ exports.getRequests = function getRequests(callback) {
 
     db.collection('request').find().toArray(function(err, result) {
         if (err) throw err;
-        console.log(result);
+        //console.log(result);
         callback("",result);
     });
 
