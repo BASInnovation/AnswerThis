@@ -57,7 +57,7 @@ function sendcalc()
         //http://answerthis.cloudapp.net
         //var maxQuestions = data.length;
         
-        console.log('DATA: ' + data);
+        //console.log('DATA: ' + data);
 
         if(data)
         {

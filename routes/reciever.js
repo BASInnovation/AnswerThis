@@ -64,7 +64,7 @@ exports.TextRecieved = function(req, res){
 
 
 
-    res.send("sent");
+    res.send({messgae:"sent"});
 
 
 
