@@ -6,7 +6,7 @@ exports.insertRequest = function insertRequest(calcrequest,result,callback) {
 
     date = new Date();
 
-    db.collection('request').insert({dateadded:date,request:calcrequest,answer:result}, function(err, result) {
+    db.collection('request').insert({dateadded:date,request:calcrequest,answer:result['actualResult'],message:result['message']}, function(err, result) {
         if (err) {
             console.log(err);
 
@@ -18,8 +18,6 @@ exports.insertRequest = function insertRequest(calcrequest,result,callback) {
 
         }
     });
-
-
 
 }
 

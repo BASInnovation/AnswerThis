@@ -13,9 +13,13 @@ head
 
     script(src="/javascripts/jquery.min.js")
     script(src="/javascripts/bootstrap.js")
+    script(src="/javascripts/auditcharts.js")
+    script(src="/javascripts/Chart.js")
 
 body
-
+    script.
+        var calcs = "#{results}";
+    
     #wrapper
 
         nav.navbar.navbar-default.navbar-static-top(role="navigation", style="margin-bottom: 0")
@@ -38,8 +42,8 @@ body
                                 .col-xs-3
                                     i.fa.fa-comments.fa-5x
                                 .col-xs-9.text-right
-                                    .huge 26
-                                    div New Comments!
+                                    .huge#total 26
+                                    div Total of All Calculations
 
                 .col-lg-3.col-md-6
                     .panel.panel-green
@@ -48,8 +52,8 @@ body
                                 .col-xs-3
                                     i.fa.fa-tasks.fa-5x
                                 .col-xs-9.text-right
-                                    .huge 12
-                                    div New Tasks!
+                                    .huge#common 12
+                                    div Most Common Calculation
                 .col-lg-3.col-md-6
                     .panel.panel-yellow
                         .panel-heading
@@ -57,8 +61,8 @@ body
                                 .col-xs-3
                                     i.fa.fa-shopping-cart.fa-5x
                                 .col-xs-9.text-right
-                                    .huge 124
-                                    div New Orders!
+                                    .huge#largest 124
+                                    div Largest Calculation Result
                 .col-lg-3.col-md-6
                     .panel.panel-red
                         .panel-heading
@@ -66,23 +70,29 @@ body
                                 .col-xs-3
                                     i.fa.fa-support.fa-5x
                                 .col-xs-9.text-right
-                                    .huge 13
-                                    div Support Tickets!
+                                    .huge#eight 13
+                                    div Total Numer of 8's
             .row
                 .col-lg-8
                     .panel.panel-default
                         .panel-heading
                             i.fa.fa-bar-chart-o.fa-fw Area Chart Example
                         .panel-body
-                            #morris-area-chart
-
+                            canvas#chart1(width="870", height="435")
                     .panel.panel-default
                         .panel-heading
                             i.fa.fa-bar-chart-o.fa-fw Bar Chart Example
                         .panel-body
-
+                            canvas#chart2(width="870", height="435")
                 .col-lg-4
                     .panel.panel-default
                         .panel-heading
-                            i.fa.fa-bell.fa-fw Notifications Panel
+                            i.fa.fa-bell.fa-fw Lastest Calculations
                         .panel-body
+                            table.table.table-striped#latestTable
+                                thead
+                                    tr
+                                        th Calc
+                                        th Answer
+                                        th Message
+                                tbody
