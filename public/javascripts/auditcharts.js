@@ -96,7 +96,15 @@ function populateauditinfo()
 
         if(isNumber(Math.round(calcsdatafeed[i].message).toString()))
         {
-            html += "<td>" + parseFloat(calcsdatafeed[i].message).toFixed(2) + "</td>"
+
+            if(isNaN(parseFloat(calcsdatafeed[i].message)))
+            {
+                html += "<td></td>"
+            }
+            else
+            {
+                html += "<td>" + parseFloat(calcsdatafeed[i].message).toFixed(2) + "</td>"
+            }
         }
         else
         {
