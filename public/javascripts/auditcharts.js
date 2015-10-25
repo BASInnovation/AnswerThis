@@ -99,16 +99,16 @@ function populateauditinfo()
 
             if(isNaN(parseFloat(calcsdatafeed[i].message)))
             {
-                html += "<td></td>"
+                html += "<td class='digital'></td>"
             }
             else
             {
-                html += "<td>" + parseFloat(calcsdatafeed[i].message).toFixed(2) + "</td>"
+                html += "<td class='digital'>" + parseFloat(calcsdatafeed[i].message).toFixed(2) + "</td>"
             }
         }
         else
         {
-            html += "<td>" + calcsdatafeed[i].message + "</td>" 
+            html += "<td class='digital'>" + calcsdatafeed[i].message + "</td>" 
         }
         
         
