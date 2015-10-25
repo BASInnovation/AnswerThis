@@ -73,7 +73,7 @@ function populateauditinfo()
     var html = "";
     var total = 0;
     var answers = [];
-    var eightcount = 0;
+    var totaleightcount = 0;
     var requests = [];
     var onecount = 0;
     var twocount = 0;
@@ -100,7 +100,7 @@ function populateauditinfo()
         {
             if(answersplit[j]==8)
             {
-                eightcount+=1;
+                totaleightcount+=1;
             }
             
         }
@@ -164,7 +164,7 @@ function populateauditinfo()
 
     $('#latestTable > tbody').html(html);
     $('#total').html(total);
-    $('#eight').html(eightcount);
+    $('#eight').html(totaleightcount);
     $('#largest').html(Math.max.apply(Math, answers));
     $('#common').html(common(requests));
 }
