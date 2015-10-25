@@ -93,8 +93,8 @@ function populateauditinfo()
         html += "<tr>"
         html += "<td>" + calcsdatafeed[i].request + "</td>"
         html += "<td>" + calcsdatafeed[i].answer.toFixed(2) + "</td>"
-        
-        if(isNumber(calcsdatafeed[i].message))
+
+        if(isNumber(Math.round(calcsdatafeed[i].message).toString()))
         {
             html += "<td>" + parseFloat(calcsdatafeed[i].message).toFixed(2) + "</td>"
         }
