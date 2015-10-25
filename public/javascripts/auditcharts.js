@@ -88,7 +88,7 @@ function populateauditinfo()
     {
         html += "<tr>"
         html += "<td>" + calcsdatafeed[i].request + "</td>"
-        html += "<td>" + calcsdatafeed[i].answer + "</td>"
+        html += "<td>" + calcsdatafeed[i].answer.toFixed(2) + "</td>"
         html += "<td>" + calcsdatafeed[i].message + "</td>"
         html += "</tr>"
 
@@ -161,9 +161,10 @@ function populateauditinfo()
     numbercounts.push(zerocount);
 
     $('#latestTable > tbody').html(html);
-    $('#total').html(total);
+    $('#total').html(total.toFixed(2));
+
     $('#eight').html(totaleightcount);
-    $('#largest').html(Math.max.apply(Math, answers));
+    $('#largest').html(Math.max.apply(Math, answers).toFixed(2));
     $('#common').html(common(requests));
 }
 
