@@ -64,6 +64,10 @@ function sendcalc()
 
 }
 
+function isNumber(token) {
+    return token !== undefined && token.match(/^[0-9]+$/) !== null;
+}
+
 function populateauditinfo()
 {
     var calcsdatafeed = JSON.parse(calcs.replace(/&quot;/g, '"'));
@@ -89,7 +93,17 @@ function populateauditinfo()
         html += "<tr>"
         html += "<td>" + calcsdatafeed[i].request + "</td>"
         html += "<td>" + calcsdatafeed[i].answer.toFixed(2) + "</td>"
-        html += "<td>" + calcsdatafeed[i].message + "</td>"
+        
+        if(isNumber(calcsdatafeed[i].message))
+        {
+            html += "<td>" + calcsdatafeed[i].message.toFixed(2) + "</td>"
+        }
+        else
+        {
+            html += "<td>" + calcsdatafeed[i].message + "</td>" 
+        }
+        
+        
         html += "</tr>"
 
         var answersplit = calcsdatafeed[i].answer.toString().split('');
