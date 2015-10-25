@@ -92,6 +92,15 @@ exports.TextRecievedTest = function(req, res){
     worker.Calculate(txtMessage,function(err,result){
 
 
+        if (result.message == "")
+        {
+            result.message = result.actualResult + "";
+        }
+        //phils reply in here.
+        if (result.message == ""){result.message = "why the blank message? :( ";}
+
+
+
         // save to db
         dbcalcs.insertRequest(txtMessage,result,function(err,dbresult){
 
